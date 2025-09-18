@@ -9,6 +9,6 @@ public interface CompanyService {
 
     String deleteCompany(Long id);
 
-    String updateCompany(Long id, Company company);
+    boolean updateCompany(Long id, Company company);
 
 }
