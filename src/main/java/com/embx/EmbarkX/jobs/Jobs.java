@@ -1,5 +1,6 @@
 package com.embx.EmbarkX.jobs;
 
+import com.embx.EmbarkX.companies.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,9 @@ public class Jobs {
     private String minSalary;
     private String maxSalary;
 
+    @ManyToOne(cascade = CascadeType.REMOVE)
+    private Company company;
+
     public Jobs() {
     }
 
@@ -23,6 +27,14 @@ public class Jobs {
         this.description = description;
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 
     public Long getId() {
